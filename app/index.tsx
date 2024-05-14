@@ -7,6 +7,7 @@ import ConnectAsGuest from '../components/ConnectAsGuest';
 import { useLogin } from 'farcasterkit-react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {db} from '../firebaseConfig';
 
 export default function IndexScreen() {
   const { farcasterUser } = useLogin();
@@ -16,6 +17,8 @@ export default function IndexScreen() {
       router.push('/(tabs)');
     }
   }, [farcasterUser]);
+
+  console.log('db is', db);
 
   return (
       <SafeAreaView style={styles.container}>
@@ -53,7 +56,7 @@ const styles = StyleSheet.create({
   },
   homepageHeader: {
     width: '100%', 
-    height: undefined,
+    height: 'undefined',
     aspectRatio: 2150 / 200,
   },
 });

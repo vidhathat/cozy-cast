@@ -18,6 +18,7 @@ export default function SignInWithNeynar() {
 
   useEffect(() => {
     if (warpcastUser && signerUuid) {
+      console.log('warpcastUser', warpcastUser);
       const farcasterUser = {
         signer_uuid: signerUuid,
         fid: Number(warpcastUser.fid),
